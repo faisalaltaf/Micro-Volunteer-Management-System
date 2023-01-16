@@ -21,6 +21,11 @@ return [
         'driver' => 'eloquent',
         'passwords' => App\Models\Admin::class,
     ],
+       // doctor guard add 
+       'doctor' => [
+        'driver' => 'eloquent',
+        'passwords' => App\Models\Doctor::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -48,6 +53,12 @@ return [
             'driver'=>'session',
             'provider'=>'admins',
                     ], 
+                        // dcotor session
+        
+        'doctor'=>[
+            'driver'=>'session',
+            'provider'=>'doctors',
+        ],
     ],
 
     /*
@@ -81,6 +92,10 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        'doctors'=>[
+            'driver'=> 'eloquent',
+            'model'=> App\Models\Doctor::class,
+                    ],
     ],
 
     /*
@@ -108,6 +123,10 @@ return [
         'admins'=>[
             'driver'=>'eloquent',
             'model'=> \App\Models\Admin::class,
+        ],
+        'doctors'=>[
+            'driver'=> 'eloquent',
+            'model'=> \App\Models\Doctor::class,
         ],
     ],
 

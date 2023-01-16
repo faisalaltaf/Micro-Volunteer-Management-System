@@ -27,7 +27,10 @@ class RedirectIfAuthenticated
                 if($guard ==='admin'){
                   return redirect()->route('admin.home');
                 }
-               
+                if($guard ==='doctor'){
+                    return redirect()->route('doctor.home');
+                }
+                // return redirect()->route('user.home');
                 return redirect()->route('home');
                 // return redirect(RouteServiceProvider::HOME);
             }

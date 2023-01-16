@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <!-- Font Icon -->
     <link rel="stylesheet" href="{{asset('assets_login/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
 
@@ -15,14 +17,25 @@
 </head>
 <body>
 
-    <div class="main">
+    <div class="main" style="background:#F4F9FD;padding: 75px 0;">
 
         <!-- Sign up form -->
-    
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
+   
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+       
+            <div class="container" style="background:transparent linear-gradient(297deg, #3604B0 0%, #3501E9 100%) 0% 0% no-repeat">
+
+
+                <div class="signin-content">
+             
+                    <div class="signin-image" style="vertical-align:middle;    margin-top: 8px;">
+                        <figure><img src="{{ asset('argon') }}/img/brand/pngwing.com.png" alt="sing up image"></figure>
+                    </div>
+
+                 
+<div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         
 
@@ -33,6 +46,12 @@
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name" value="{{ old ('name')}}"/>
                            <span style="color: red;" class="text-danger">@error('name'){{ $message }} @enderror</span>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="last_name" id="last_name" placeholder="Your last name" value="{{ old ('last_name')}}"/>
+                           <span style="color: red;" class="text-danger">@error('last_name'){{ $message }} @enderror</span>
 
                             </div>
                             <div class="form-group">
@@ -64,9 +83,15 @@
                            
                             </div> -->
                             <div class="form-group form-button">
-                                <input type="submit"  id="signup" class="form-submit" value="Register"/>
+                                <input type="submit"  id="signup" class="form-submit" value="Register" style="background:#09BB96;"/>
+                            
                             </div>
+                            
                         </form>
+                        <div class="signup-image">
+                     
+                     <a style="color:white;" href="{{route('user.login')}}" class="signup-image-link">I am already member</a>
+                 </div>
                         @if(Session::get('success'))
                             <div style="color: green;">
                             {{Session::get('success')}}
@@ -78,21 +103,24 @@
                             {{Session::get('fail')}}
                             </div>
                             @endif
+                            
                     </div>
-                    <div class="signup-image">
-                        <figure><img src="{{asset('assets_login/images/signup-image.jpg')}}" alt="sing up image"></figure>
-                        <a href="{{route('user.login')}}" class="signup-image-link">I am already member</a>
+                  
                     </div>
+              
                 </div>
             </div>
         </section>
 
-       
     </div>
+
     <!-- JS -->
     <script src="{{asset('assets_login/vendor/jquery/jquery.min.js')}}"></script>
-
+   
     <script src="{{asset('assets_login/js/main.js')}}"></script>
-
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
+
+
+
+

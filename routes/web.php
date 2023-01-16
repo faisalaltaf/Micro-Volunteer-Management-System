@@ -31,14 +31,15 @@ Route::get('/', function () {
 // Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
 
-        Route::view('/login', 'dashboard.user.login')->name('login');
-        // Route::post('/create', [UserController::class, 'create'])->name('create');
+        Route::view('user/login', 'dashboard.user.login')->name('user.login');
+        Route::post('user/create', [UserController::class, 'create'])->name('user.create');
         Route::post('/check', [UserController::class, 'check'])->name('check');
+        Route::view('user/register','dashboard.user.register')->name('user.register');
       
     });
     Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
 
-        Route::view('/home', 'dashboard.user.layout.headers.cards')->name('home');
+        Route::get('/home',  [UserController::class, 'home'])->name('home');
         Route::post('/logout', [UserController::class, 'logout'])->name('logout');
         Route::get('/profile', [UserController::class,'profile'])->name('profile');
         Route::view('/table', 'dashboard.user.table')->name('table');
@@ -74,3 +75,21 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     });
 });
+
+    // doctor route 
+    Route::prefix('doctor')->name('doctor.')->group(function(){
+        Route::middleware(['guest:doctor' ,'PreventBackHistory'])->group(function(){
+        Route::view('/login','dashboard.doctor.login')->name('login');
+        Route::view('/register','dashboard.doctor.register')->name('register');
+        Route::post('/create',[DoctorController::class,'create'])->name('create');
+        Route::post('/check',[DoctorController::class,'check'])->name('check');
+        
+    
+        });
+        Route::middleware(['auth:doctor' ,'PreventBackHistory'])->group(function(){
+        Route::view('/home','dashboard.doctor.home')->name('home');
+        Route::post('logout',[DoctorController::class,'logout'])->name('logout');
+    Route::view('/profile','dashboard.doctor.profile')->name('profile');
+    
+        });
+        });

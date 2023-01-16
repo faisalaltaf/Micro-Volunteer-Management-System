@@ -61,6 +61,10 @@
                                 <input type="submit"  class="form-submit" style="background:#09BB96;" />
                             </div>
                         </form>
+                        <div class="signup-image">
+                     
+                     <a style="color:white;" href="{{route('user.register')}}" class="signup-image-link">Sign Up</a>
+                 </div>
                         @if(Session::get('fail'))
                             <div style="color: red;">
                             <strong>

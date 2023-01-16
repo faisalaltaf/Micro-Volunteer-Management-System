@@ -17,18 +17,25 @@ class UserController extends Controller
 
   public function profile(){
     $id = auth::user()->id;
+   
     $user = User::where('id',$id)->first();
     
     return view('dashboard.user.profile', compact('user'));
   }
+  public function home(){
+    $id = auth::user()->id;
+
+    $user = User::where('id',$id)->first();
+    return view('dashboard.user.layout.headers.cards', compact('user'));
+  }
     //
     function profile_edit(Request $request){
-
+      $id = auth::user()->id;
       $file = $request->file;
-      $request->file = MyHelper::image_upload($file,$request);
+      $request->file = MyHelper::image_upload($file,$request,$id);
       $request->password_new = Hash::make($request->password_new);
       $request->password_confirm = Hash::make($request->password_confirm);
-      $id = auth::user()->id;
+
         $admin = User::where('id',$id)->update([
           'email' => $request->email , 
           'name' => $request->first_name ,
@@ -38,7 +45,8 @@ class UserController extends Controller
           'password_confirm' => $request->password_confirm,
           'file' => $request->file,
         ]);
-        $user = User::where('id','1')->first();
+        $user = User::where('id',$id)->first();
+        
       if($admin){
         return response()->json(['status'=>true ,'image'=>$user->file,'phone_number'=>$user->phone_number]);
       }else{
@@ -89,6 +97,30 @@ function logout(){
   return redirect('/login');
   
 }
+
+function create(Request $request){
+  $request->validate([
+      'name'=>'required',
+      'email'=>'required |email|unique:users,email',
+      'password'=> 'required|min:5|max:20',
+      'cpassword'=>'required|min:5|max:20|same:password'
+  ]);
+
+  $user = new User();
+  $user->name = $request->name;
+  $user->email = $request->email;
+  $user->password = \Hash::make($request->password);
+//   $user->cpassword = \Hash::make($request->cpassword);
+  $save = $user->save();
+
+  if($save ){
+return redirect()->back()->with('success','you are now  register successfuly');
+
+  }else{
+return redirect()->back()->with('fail', 'you are correct details');
+  }
+}
+
 
 
 }

@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 <style>
 * {
     margin: 0;
@@ -63,6 +64,9 @@
 .img_change input[type="file"] {
     display: none;
 }
+.labels{
+    color:white;
+}
 </style>
 
 
@@ -85,7 +89,7 @@
 
  
         <div class="col-lg-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img id="image_change" class="rounded-circle mt-5" width="150px" src="{{asset('profile_image/')}}/{{$user->file}}"><h5 class="font-weight-bold">{{$user->name}}</ class="text-black-50" >{{$user->email}}</h2><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img id="image_change" class="rounded-circle mt-5" width="150px" src="{{asset('profile_image/')}}/{{$user->file}}"><span style="color:white;" class="font-weight-bold">Parag</span><span class="text-black-50" >{{$user->email}}</span><span> </span></div>
         </div>
      
         <div class="col-lg-5 border-right">
@@ -138,7 +142,7 @@
     margin: 0px auto;
     font-size: 14px;
     margin-bottom: 8px;     font-weight: 600;
-    font-size: 14px;"> Upload Video <input type="file" name="file" size="60"> </label> </div> <br>
+    font-size: 14px;"> Profile Image <input type="file" name="file" size="60"> </label> </div> <br>
                 <!-- <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div> -->
             </div>
         </div>
