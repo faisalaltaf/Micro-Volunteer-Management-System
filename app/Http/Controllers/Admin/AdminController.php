@@ -41,7 +41,7 @@ class AdminController extends Controller
     //
     function show()
     {
-        $pateint = User::get();
-        return view('dashboard.admin.pateintshow', compact('pateint'));
+        $user = User::get();
+        return view('dashboard.admin.usershow', compact('user'));
     }
 }

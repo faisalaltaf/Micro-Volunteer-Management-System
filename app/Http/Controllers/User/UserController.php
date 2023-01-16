@@ -16,7 +16,9 @@ class UserController extends Controller
 
 
   public function profile(){
-    $user = User::where('id','1')->first();
+    $id = auth::user()->id;
+    $user = User::where('id',$id)->first();
+    
     return view('dashboard.user.profile', compact('user'));
   }
     //
@@ -26,8 +28,8 @@ class UserController extends Controller
       $request->file = MyHelper::image_upload($file,$request);
       $request->password_new = Hash::make($request->password_new);
       $request->password_confirm = Hash::make($request->password_confirm);
-      
-        $admin = User::where('id','1')->update([
+      $id = auth::user()->id;
+        $admin = User::where('id',$id)->update([
           'email' => $request->email , 
           'name' => $request->first_name ,
           'last_name' => $request->last_name,

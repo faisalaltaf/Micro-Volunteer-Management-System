@@ -34,10 +34,7 @@ Route::get('/', function () {
         Route::view('/login', 'dashboard.user.login')->name('login');
         // Route::post('/create', [UserController::class, 'create'])->name('create');
         Route::post('/check', [UserController::class, 'check'])->name('check');
-        // patient 
-        // Route::post('/create', [UserController::class, 'create'])->name('create');
-        // pateint 
-        // Route::view('/register', 'dashboard.user.register')->name('register');
+      
     });
     Route::middleware(['auth:web', 'PreventBackHistory'])->group(function () {
 
@@ -62,3 +59,18 @@ Route::get('/', function () {
 // ===============================================================================================
 //================ admin route ///================================================================
 // ===============================================================================================
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::middleware(['guest:admin', 'PreventBackHistory'])->group(function () {
+        Route::view('/login', 'dashboard.admin.login')->name('login');
+        Route::post('/check', [AdminController::class, 'check'])->name('check');
+    });
+
+    Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function () {
+        Route::view('/home', 'dashboard.admin.home')->name('home');
+        Route::post('/logut', [AdminController::class, 'logout'])->name('logout');
+        Route::view('/profile', 'dashboard.admin.profile')->name('profile');
+        Route::get('/userlist', [AdminController::class, 'show'])->name('userlist');
+
+    });
+});

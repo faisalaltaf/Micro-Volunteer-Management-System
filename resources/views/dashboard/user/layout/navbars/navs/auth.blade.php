@@ -13,7 +13,7 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                            <img alt="Image placeholder" id="change_image_nav"  src="{{ asset('profile_image/')}}/{{top_bar_get_image()}}">
+                            <img alt="Image placeholder" id="change_image_nav"  src="{{ asset('profile_image/')}}/{{top_bar_get_image($user->id)}}">
                         </span>
                         <div class="media-body ml-2 d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>

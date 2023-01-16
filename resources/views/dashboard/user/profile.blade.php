@@ -85,7 +85,7 @@
 
  
         <div class="col-lg-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img id="image_change" class="rounded-circle mt-5" width="150px" src="{{asset('profile_image/')}}/{{$user->file}}"><span class="font-weight-bold">Parag</span><span class="text-black-50" >edogaru@mail.com.my</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img id="image_change" class="rounded-circle mt-5" width="150px" src="{{asset('profile_image/')}}/{{$user->file}}"><h5 class="font-weight-bold">{{$user->name}}</ class="text-black-50" >{{$user->email}}</h2><span> </span></div>
         </div>
      
         <div class="col-lg-5 border-right">

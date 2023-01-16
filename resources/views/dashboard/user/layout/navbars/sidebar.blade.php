@@ -9,12 +9,13 @@
             <img class="desktop_logo" src="{{ asset('argon') }}/img/brand/logo.png" class="navbar-brand-img" alt="">
         </a>
         <!-- User -->
+      
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                        <img alt="Image placeholder" src="{{ asset('profile_image/')}}/{{top_bar_get_image()}}">
+                        <img alt="Image placeholder" src="{{ asset('profile_image/')}}/{{top_bar_get_image($user->id)}}">
                         </span>
                     </div>
                 </a>
