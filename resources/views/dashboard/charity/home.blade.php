@@ -1,8 +1,8 @@
-@extends('dashboard.doctor.layout.main')
+@extends('dashboard.charity.layout.main')
 
 
 @section('content')
-<p>{{Auth::guard('doctor')->user()->hospital}}</p>
+<p>{{Auth::guard('charity')->user()->location}}</p>
 <div class="row">
           <div class="col-12">
             <div class="card card-chart">

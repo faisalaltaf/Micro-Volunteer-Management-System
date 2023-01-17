@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Doctor</title>
+	<title>Charity</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -30,7 +30,7 @@
 					<img src="{{asset('doctorlogin/images/Tosca Blue Online Doctor Consultation Instagram Post.png')}}" alt="IMG">
 				</div>
 
-				<form action="{{route('doctor.check')}}" method="post" class="login100-form validate-form">
+				<form action="{{route('charity.check')}}" method="post" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Charify Login
 					</span>
@@ -74,7 +74,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="{{route('doctor.register')}}">
+						<a class="txt2" href="{{route('charity.register')}}">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

@@ -1,4 +1,4 @@
-@extends('dashboard.doctor.layout.main')
+@extends('dashboard.charity.layout.main')
 
 
 @section('content')
@@ -6,14 +6,14 @@
 
  <div class="content">
         <div class="container-fluid">
-          <div class="custom row" style="display:inline-table;">
+        <!-- style="display:inline-table;" -->
+          <div class="custom row" >
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Doctor Profile</h4>
-                  <p class="card-category">                      <td>{{Auth::guard('doctor')->user()->name}}</td>
-</p>
-                </div>
+                  <h4 class="card-title ">Charity Profile</h4>
+                  <p class="card-category">                      <td>{{Auth::guard('charity')->user()->name}}</td>
+</p></div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
@@ -31,16 +31,16 @@
                           Email
                         </th>
                         <th>
-                          Hospital
+                        Location
                         </th>
                       </tr></thead>
                       <tbody>
                         <tr>
-                     <td>{{Auth::guard('doctor')->user()->id}}</td>
-                     <td>{{Auth::guard('doctor')->user()->name}}</td>
-                     <td>{{Auth::guard('doctor')->user()->phone}}</td>
-                     <td>{{Auth::guard('doctor')->user()->email}}</td>
-                     <td>{{Auth::guard('doctor')->user()->hospital}}</td>
+                     <td>{{Auth::guard('charity')->user()->id}}</td>
+                     <td>{{Auth::guard('charity')->user()->name}}</td>
+                     <td>{{Auth::guard('charity')->user()->phone}}</td>
+                     <td>{{Auth::guard('charity')->user()->email}}</td>
+                     <td>{{Auth::guard('charity')->user()->location}}</td>
                         </tr>
                         
                       </tbody>

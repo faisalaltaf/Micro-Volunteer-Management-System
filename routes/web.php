@@ -8,6 +8,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserfrontendController;
 use App\Http\Controllers\Header_create_dataController;
+use App\Http\Controllers\Charity\CharityController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,6 @@ Route::get('/', function () {
     }
     return view('dashboard.user.login');
 });
-
 
 // Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
@@ -47,11 +47,11 @@ Route::get('/', function () {
 
     });
 
-    Route::get('/optimize', function() {
+Route::get('/optimize', function() {
         $exitCode = Artisan::call('view:cache');
         return '<h1>Reoptimized class loader</h1>';
     });
-    Route::get('/updateapp', function()
+Route::get('/updateapp', function()
     {
         \Artisan::call('dump-autoload');
         echo 'dump-autoload complete';
@@ -76,20 +76,19 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-    // doctor route 
-    Route::prefix('doctor')->name('doctor.')->group(function(){
-        Route::middleware(['guest:doctor' ,'PreventBackHistory'])->group(function(){
-        Route::view('/login','dashboard.doctor.login')->name('login');
-        Route::view('/register','dashboard.doctor.register')->name('register');
-        Route::post('/create',[DoctorController::class,'create'])->name('create');
-        Route::post('/check',[DoctorController::class,'check'])->name('check');
+    // charity route 
+    Route::prefix('charity')->name('charity.')->group(function(){
+        Route::middleware(['guest:charity' ,'PreventBackHistory'])->group(function(){
+        Route::view('/login','dashboard.charity.login')->name('login');
+        Route::view('/register','dashboard.charity.register')->name('register');
+        Route::post('/create',[CharityController::class,'create'])->name('create');
+        Route::post('/check',[CharityController::class,'check'])->name('check');
         
-    
         });
-        Route::middleware(['auth:doctor' ,'PreventBackHistory'])->group(function(){
-        Route::view('/home','dashboard.doctor.home')->name('home');
-        Route::post('logout',[DoctorController::class,'logout'])->name('logout');
-    Route::view('/profile','dashboard.doctor.profile')->name('profile');
+        Route::middleware(['auth:charity' ,'PreventBackHistory'])->group(function(){
+        Route::view('/home','dashboard.charity.home')->name('home');
+        Route::post('logout',[CharityController::class,'logout'])->name('logout');
+    Route::view('/profile','dashboard.charity.profile')->name('profile');
     
         });
         });

@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Doctor;
+namespace App\Http\Controllers\Charity;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-use App\Models\Doctor;
+use App\Models\Charity;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class DoctorController extends Controller
+class CharityController extends Controller
 {
     //
 
     function  create(Request $request){
         $request->validate([
  'name'=>'required',
- 'hospital'=>'required|unique:doctors',
- 'email'=>'required|email|unique:doctors,email',
- 'phone' => 'required|unique:doctors' ,
+ 'location'=>'required',
+ 'email'=>'required|email|unique:charities,email',
+ 'phone' => 'required|unique:charities' ,
  'password'=> 'required | min:5|max:20',
  'cpassword'=>'required |min:5|max:20|same:password',
 
@@ -31,9 +31,9 @@ class DoctorController extends Controller
     //   //   $user->cpassword = \Hash::make($request->cpassword);
     //     $save = $user->save();
 
-    $doctor =new Doctor();
+    $doctor =new Charity();
     $doctor->name = $request->name;
-    $doctor->hospital = $request->hospital;
+    $doctor->location = $request->location;
     $doctor->email =$request->email;
     $doctor->phone = $request->phone;
     $doctor->password = \Hash::make($request->password);
@@ -47,26 +47,38 @@ return redirect()->back()->with('fail','correct data insert');
 
 function check(Request $request){
     $request->validate([
-        'email'=>"required|email|exists:doctors,email",
+        'email'=>"required|email|exists:charities,email",
         'password'=>"required|min:4|max:20",
 
     ],[
         'email.exists'=>'this is email not exit doctor table',
 
     ]);
+    $Charity=Charity::get();
 
+
+foreach($Charity as $Charity ){
+
+    $creds =  $request ->only('email','password');
+    if($request['status']==1){
+
+    
     $creds = $request->only('email','password');
-    if(Auth::guard('doctor')->attempt($creds)){
-        return redirect()->route('doctor.home');
+    if(Auth::guard('charity')->attempt($creds)){
+        return redirect()->route('charity.home');
     }else{
-        return redirect()->route('doctor.login')->with('fail','password correct');
+        return redirect()->route('charity.login')->with('fail','password correct');
     }
+}else{
+    return redirect()->route('login')->with('fail','Admin Not permission ');
+}
+}
 }
 
 
 function logout(Request $request){
-    Auth::guard('doctor')->logout();
-    return redirect('doctor/login');
+    Auth::guard('charify')->logout();
+    return redirect('charify/login');
 }
 
 

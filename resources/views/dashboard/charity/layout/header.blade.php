@@ -8,7 +8,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="{{route('doctor.home')}}">Dashboard</a>
+            <a class="navbar-brand" href="{{route('charity.home')}}">Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -49,10 +49,10 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="{{route('doctor.profile')}}" class="nav-item dropdown-item">Profile</a></li>
+                  <li class="nav-link"><a href="{{route('charity.profile')}}" class="nav-item dropdown-item">Profile</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
                   <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="{{route('doctor.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit(); " class="nav-item dropdown-item">Log out</a></li>
+                  <li class="nav-link"><a href="{{route('charity.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit(); " class="nav-item dropdown-item">Log out</a></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>

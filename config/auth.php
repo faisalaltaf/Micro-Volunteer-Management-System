@@ -21,10 +21,10 @@ return [
         'driver' => 'eloquent',
         'passwords' => App\Models\Admin::class,
     ],
-       // doctor guard add 
-       'doctor' => [
+       // charity guard add 
+       'charity' => [
         'driver' => 'eloquent',
-        'passwords' => App\Models\Doctor::class,
+        'passwords' => App\Models\Charity::class,
     ],
 
     /*
@@ -55,9 +55,9 @@ return [
                     ], 
                         // dcotor session
         
-        'doctor'=>[
+        'charity'=>[
             'driver'=>'session',
-            'provider'=>'doctors',
+            'provider'=>'charity',
         ],
     ],
 
@@ -92,9 +92,9 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-        'doctors'=>[
+        'charity'=>[
             'driver'=> 'eloquent',
-            'model'=> App\Models\Doctor::class,
+            'model'=> App\Models\Charity::class,
                     ],
     ],
 
@@ -124,9 +124,9 @@ return [
             'driver'=>'eloquent',
             'model'=> \App\Models\Admin::class,
         ],
-        'doctors'=>[
+        'charity'=>[
             'driver'=> 'eloquent',
-            'model'=> \App\Models\Doctor::class,
+            'model'=> \App\Models\Charity::class,
         ],
     ],
 

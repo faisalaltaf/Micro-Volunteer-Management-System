@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    @include('dashboard.doctor.layout.css')
+    @include('dashboard.charity.layout.css')
     <title> Admin Dashboard</title>
 </head>
 <body>
@@ -15,15 +15,15 @@
   
   
   
-  @include('dashboard.doctor.layout.sidebar')
+  @include('dashboard.charity.layout.sidebar')
   <div class="main-panel ps-container ps-theme-default ps-active-y" data-ps-id="f67a9759-3221-53c1-60ed-cf9903e269d7">
 <div class="main-panel ps ps--active-y">
 
-  @include('dashboard.doctor.layout.header')
+  @include('dashboard.charity.layout.header')
   
   <div class="content">
     <div class="container-fluid">
-      <div class="row">
+      <div class="container">
         
         
         <main class="px-4">
@@ -33,7 +33,7 @@
       </div>
         
         </div></div></div>
-        @include('dashboard.doctor.layout.footer')
+        @include('dashboard.charity.layout.footer')
 
       </div>
       
@@ -42,5 +42,5 @@
 </div>
 
 </body>
-@include('dashboard.doctor.layout.js')
+@include('dashboard.charity.layout.js')
 </html>

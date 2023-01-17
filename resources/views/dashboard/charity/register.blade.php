@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Doctor </title>
+	<title>Charity </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -30,9 +30,9 @@
 					<img src="{{asset('doctorlogin/images/Tosca Blue Online Doctor Consultation Instagram Post.png')}}" alt="IMG">
 				</div>
 
-				<form action="{{route('doctor.create')}}" method="post"  class="login100-form validate-form">
+				<form action="{{route('charity.create')}}" method="post"  class="login100-form validate-form">
 					<span class="login100-form-title">
-						Doctor  Register Form
+					Charity Register Form
 					</span>
 					@csrf
 			@if(Session::get('success'))
@@ -53,12 +53,12 @@
 				
 				
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="hospital" placeholder="enter the hospital name" value="{{old('hospital')}}" >
+						<input class="input100" type="text" name="location" placeholder="enter the location name" value="{{old('location')}}" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 					
 						</span>
-						<span class="text-danger">@error('hospital'){{$message}} @enderror	</span>
+						<span class="text-danger">@error('location'){{$message}} @enderror	</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -104,18 +104,18 @@
 						
 					</div>
 
-					<div class="text-center p-t-12">
+					<!-- <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
 						</span>
 						<a class="txt2" href="#">
 							Username / Password?
 						</a>
-					</div>
+					</div> -->
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Create your Account
+						<a class="txt2" href="{{route('charity.login')}}">
+							Already your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
