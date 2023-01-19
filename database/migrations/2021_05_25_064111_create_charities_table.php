@@ -19,7 +19,9 @@ class CreateCharitiesTable extends Migration
             $table->string('location')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->uniqid();
-            $table->string('status')->nullable();
+            $table->string('status')->default(0);
+            $table->string('expenses')->nullable();
+            $table->string('total_child')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

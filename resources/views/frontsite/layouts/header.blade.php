@@ -59,8 +59,8 @@
                                                 <li><a href="{{route('latestcase')}}"> causes</a></li>
                                                 <li><a href="{{route('socialevent')}}">social events </a></li>
                                                 <li><a href="{{route('contact')}}">Contact</a></li>
-                                                <li><a href="{{route('user.register')}}">Donate </a></li>
-                                                <li><a href="{{route('charity.register')}}">Charity</a></li>
+                                                <li><a href="{{route('user.login')}}">Donate </a></li>
+                                                <li><a href="{{route('charity.login')}}">Charity</a></li>
                                                 <!-- <li><a href="{{route('admin.login')}}">Admin</a></li> -->
                                               
                                             </ul>
@@ -68,7 +68,7 @@
                                     </div>
                                     <!-- Header-btn -->
                                     <div class="header-right-btn d-none d-lg-block ml-20">
-                                        <a href="{{route('user.register')}}" class="btn header-btn">Donate</a>
+                                        <a href="{{route('user.login')}}" class="btn header-btn">Donate</a>
                                     </div>
                                 </div>
                             </div> 
@@ -80,7 +80,7 @@
                                                 <li><a href="{{route('latestcase')}}" role="menuitem" tabindex="-1">latest causes</a></li>
                                                 <li><a href="{{route('socialevent')}}" role="menuitem" tabindex="-1">social events </a></li>
                                                 <li><a href="{{route('user.register')}}" role="menuitem" tabindex="-1">Donate </a></li>
-                                                <li><a href="{{route('charity.register')}}" role="menuitem" tabindex="-1">Charity</a></li>
+                                                <li><a href="{{route('charity.login')}}" role="menuitem" tabindex="-1">Charity</a></li>
                                                 <li><a href="{{route('contact')}}" role="menuitem" tabindex="-1">Contact</a></li>
                                             </ul></div></div>
                             </div>

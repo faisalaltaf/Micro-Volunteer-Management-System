@@ -42,7 +42,13 @@
   <script src="{{asset('material-dashboard-master/assets/demo/demo.js')}}"></script>
   <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
- 
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function () {
+        $('#index-table').DataTable({
+        });
+    } );
+    </script>
  <script>
 
 

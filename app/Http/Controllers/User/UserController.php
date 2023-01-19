@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Charity;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
@@ -123,6 +124,17 @@ return redirect()->back()->with('fail', 'you are correct details');
   }
 }
 
+public function charitylist(){
+  $Charity = Charity::get();
+  $id = auth::user()->id;
 
+  $user = User::where('id',$id)->first();
+  return view('dashboard.user.charitylist',compact('Charity','user'));
+}
+public function donationform(){
+  $id = auth::user()->id;
+  $user = User::where('id',$id)->first();
+  return view('dashboard.user.donateform',compact('user'));
+}
 
 }

@@ -3,7 +3,7 @@
     <div class="container-fluid" >
         <!-- Brand -->
         <a class="h4 mb-0  text-uppercase d-none d-lg-inline-block dgc-title" href="{{ route('home') }}">         
-             <img  src="{{ asset('argon') }}/img/brand/logo.png" class="navbar-brand-img" alt="">
+             <img  src="" class="navbar-brand-img" alt="">
       </a>
         <!-- Form -->
       

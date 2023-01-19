@@ -15,10 +15,10 @@
                                 <p data-animation="fadeInUp" data-delay=".8s" class="" style="animation-delay: 0.8s;">Onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut bore et dolore magnt, sed do eiusmod.</p>
                                 <!-- Hero-btn -->
                                 <div class="hero__btn">
-                                    <a href="industries.html" class="btn hero-btn mb-10" data-animation="fadeInLeft" data-delay=".8s" tabindex="0" style="animation-delay: 0.8s;">Donate</a>
-                                    <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s" tabindex="0" style="animation-delay: 1s;">
+                                    <a href="{{route('user.login')}}" class="btn hero-btn mb-10" data-animation="fadeInLeft" data-delay=".8s" tabindex="0" style="animation-delay: 0.8s;">Donate</a>
+                                    <a href="/" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s" tabindex="0" style="animation-delay: 1s;">
                                         <i class="flaticon-null"></i>
-                                        <p>+12 1325 41</p>
+                                        <p>+923069309614</p>
                                     </a>
                                 </div>
                             </div>

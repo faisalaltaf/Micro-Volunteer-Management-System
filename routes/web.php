@@ -50,6 +50,8 @@ Route::view('/latestcase','frontsite.layouts.frontendsite.latestcase')->name('la
         Route::get('/profile', [UserController::class,'profile'])->name('profile');
         Route::view('/table', 'dashboard.user.table')->name('table');
         Route::post('/profile_edit', [UserController::class, 'profile_edit'])->name('profile_edit');
+        Route::get('/charitylist', [UserController::class, 'charitylist'])->name('charitylist');
+        Route::get('/donationform', [UserController::class, 'donationform'])->name('donationform');
 
     });
 

@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'ShopKeeper Gift Card Admin') }}</title>
+        <title>{{ config('app.name', 'Donate User') }}</title>
         <!-- Favicon -->
         <link href="https://www.shopkeepertools.com/wp-content/uploads/2021/12/shopkeeper-logo.svg" rel="icon" type="image/png">
         <!-- Fonts -->
@@ -20,6 +20,8 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Argon CSS -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+       
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
     <style type="text/css">
       
@@ -145,47 +147,42 @@
             @include('dashboard.user.layout.navbars.navbar')
             @yield('content')
         </div>
-
         @guest()
             @include('dashboard.user.layout.footers.guest')
         @endguest
-
         <div class="loader"><span><svg viewBox="0 0 32 32"><path d="M16 32c-4.274 0-8.292-1.664-11.314-4.686s-4.686-7.040-4.686-11.314c0-3.026 0.849-5.973 2.456-8.522 1.563-2.478 3.771-4.48 6.386-5.791l1.344 2.682c-2.126 1.065-3.922 2.693-5.192 4.708-1.305 2.069-1.994 4.462-1.994 6.922 0 7.168 5.832 13 13 13s13-5.832 13-13c0-2.459-0.69-4.853-1.994-6.922-1.271-2.015-3.066-3.643-5.192-4.708l1.344-2.682c2.615 1.31 4.824 3.313 6.386 5.791 1.607 2.549 2.456 5.495 2.456 8.522 0 4.274-1.664 8.292-4.686 11.314s-7.040 4.686-11.314 4.686z"></path></svg></span></div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-        
         <script>
             $(document).on('click','.dropdown1 button',function(){
     $('#show').text($(this).text());
              });
-
 $(document).ready(function() {
   $('#show').text($(".dropdown1 button[id='default-option']").text());
 });  
         </script>
-      
-        
-
-        <!-- chart start code  -->
-        
-        <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0">
-            
-        </script>
+<!-- chart start code  -->  
+<script src="{{ asset('argon') }}/js/argon.js?v=1.0.0">
+</script>
        
         @stack('js')
 
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function () {
+        $('#index-table').DataTable({
+        });
+    } );
+    </script>
 <script>
+
+  
 // initilize toster
-
-
-
   // end toster 
-
 // =====profile form js start =====//
 // ===============================//
-
 $('#password_new, #password_confirm').on('keyup', function () {
   if ($('#password_new').val() == $('#password_confirm').val()) {
     $('#message').html('Matching').css('color', 'white');

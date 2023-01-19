@@ -22,6 +22,8 @@ class Charity extends Authenticatable
         'email',
         'phone',
         'status',
+        'expenses',
+        'total_child',
         'password',
     ];
 

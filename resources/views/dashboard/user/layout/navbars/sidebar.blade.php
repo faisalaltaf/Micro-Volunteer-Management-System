@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img class="desktop_logo" src="{{ asset('argon') }}/img/brand/logo.png" class="navbar-brand-img" alt="">
+            <!-- <img class="desktop_logo" src="{{ asset('argon') }}/img/brand/logo.png" class="navbar-brand-img" alt=""> -->
         </a>
         <!-- User -->
       
@@ -124,23 +124,18 @@
             <hr class="my-3">
             <!-- Heading -->
             <h6 class="navbar-heading text-muted">
-            {{ __('App List') }}
+            {{ __('Charity List') }}
             </h6>
             <!-- Navigation -->
             <ul class="navbar-nav mb-md-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <i class="ni ni-spaceship"></i> {{ __('App User List') }}
+                    <a class="nav-link" href="{{route('charitylist')}}">
+                        <i class="ni ni-spaceship"></i> {{ __('Charity List') }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://argon-dashboard-laravel.creative-tim.com/docs/foundation/colors.html">
-                        <i class="ni ni-palette"></i>  {{ __(' App Plan List') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://argon-dashboard-laravel.creative-tim.com/docs/components/alerts.html">
-                        <i class="ni ni-ui-04"></i>  {{__('Gift Card App')}}
+                    <a class="nav-link" href="{{route('donationform')}}">
+                        <i class="ni ni-palette"></i>  {{ __(' Donate Charity') }}
                     </a>
                 </li>
             </ul>
