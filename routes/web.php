@@ -25,9 +25,15 @@ Route::get('/', function () {
     if(Auth::user()) {     
         return redirect()->route('home');
     }
-    return view('dashboard.user.login');
+    return view('frontsite.layouts.frontendsite.index');
 });
-
+// frotned page start//
+Route::view('/index','frontsite.layouts.frontendsite.index')->name('index');
+Route::view('/about','frontsite.layouts.frontendsite.about')->name('about');
+Route::view('/contact','frontsite.layouts.frontendsite.contact')->name('contact');
+Route::view('/socialevent','frontsite.layouts.frontendsite.socialevent')->name('socialevent');
+Route::view('/latestcase','frontsite.layouts.frontendsite.latestcase')->name('latestcase');
+// frotned page end//
 // Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest:web', 'PreventBackHistory'])->group(function () {
 

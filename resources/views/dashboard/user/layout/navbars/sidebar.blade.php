@@ -28,6 +28,10 @@
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
                     </a>
+                    <a href="{{ route('index') }}" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>{{ __('Website') }}</span>
+                    </a>
                     <a href="#" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
                         <span>{{ __('Settings') }}</span>
@@ -83,6 +87,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('home') }}">
                         <i class="ni ni-tv-2"></i> {{ __('Dashboard') }}
+                   
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ route('index') }}">
+                        <i class="ni ni-tv-2"></i> {{ __('Website') }}
                    
                     </a>
                 </li>

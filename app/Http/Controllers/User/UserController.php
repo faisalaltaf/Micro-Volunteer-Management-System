@@ -82,19 +82,21 @@ $creds =  $request ->only('email','password');
 if($users['status']==1){
 if(Auth::guard('web')->attempt($creds) ){
   return redirect()->route('home');
-    
+
   }else{
-    return redirect()->route('login')->with('fail','incorrect credentials');
+    return redirect()->route('user.login')->with('fail','incorrect credentials');
     
   }
 }else{
-  return redirect()->route('login')->with('fail','Admin Not permission ');
+  return redirect()->route('user.login')->with('fail','Admin Not permission ');
 }
 }
 }
 function logout(){
+  // dd('log');
   Auth::guard('web')->logout();
-  return redirect('/login');
+  
+  return redirect()->route('user.login');
   
 }
 

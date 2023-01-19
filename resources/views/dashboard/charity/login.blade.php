@@ -27,12 +27,12 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="{{asset('doctorlogin/images/Tosca Blue Online Doctor Consultation Instagram Post.png')}}" alt="IMG">
+					<img src="{{asset('charity/charityimagelogin.jpg')}}" alt="IMG">
 				</div>
 
 				<form action="{{route('charity.check')}}" method="post" class="login100-form validate-form">
 					<span class="login100-form-title">
-						Charify Login
+						Charity Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

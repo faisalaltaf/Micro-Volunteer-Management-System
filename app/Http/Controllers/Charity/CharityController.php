@@ -16,12 +16,12 @@ class CharityController extends Controller
 
     function  create(Request $request){
         $request->validate([
- 'name'=>'required',
- 'location'=>'required',
- 'email'=>'required|email|unique:charities,email',
- 'phone' => 'required|unique:charities' ,
- 'password'=> 'required | min:5|max:20',
- 'cpassword'=>'required |min:5|max:20|same:password',
+      'name'=>'required',
+      'location'=>'required',
+      'email'=>'required|email|unique:charities,email',
+      'phone' => 'required|unique:charities' ,
+      'password'=> 'required | min:5|max:20',
+      'cpassword'=>'required |min:5|max:20|same:password',
 
         ]);
     //     $user = new User();
@@ -31,14 +31,14 @@ class CharityController extends Controller
     //   //   $user->cpassword = \Hash::make($request->cpassword);
     //     $save = $user->save();
 
-    $doctor =new Charity();
-    $doctor->name = $request->name;
-    $doctor->location = $request->location;
-    $doctor->email =$request->email;
-    $doctor->phone = $request->phone;
-    $doctor->password = \Hash::make($request->password);
-    // $doctor->cpassword =\Hash::make($request->cpassword);
-$save= $doctor->save();
+    $Charity =new Charity();
+    $Charity->name = $request->name;
+    $Charity->location = $request->location;
+    $Charity->email =$request->email;
+    $Charity->phone = $request->phone;
+    $Charity->password = \Hash::make($request->password);
+    // $Charity->cpassword =\Hash::make($request->cpassword);
+$save= $Charity->save();
 if($save){
     return redirect()->back()->with('success','you are now  register successfuly');
 }else
@@ -51,7 +51,7 @@ function check(Request $request){
         'password'=>"required|min:4|max:20",
 
     ],[
-        'email.exists'=>'this is email not exit doctor table',
+        'email.exists'=>'this is email not exit Charity table',
 
     ]);
     $Charity=Charity::get();
@@ -70,15 +70,15 @@ foreach($Charity as $Charity ){
         return redirect()->route('charity.login')->with('fail','password correct');
     }
 }else{
-    return redirect()->route('login')->with('fail','Admin Not permission ');
+    return redirect()->route('charity.login')->with('fail','Admin Not permission ');
 }
 }
 }
 
 
 function logout(Request $request){
-    Auth::guard('charify')->logout();
-    return redirect('charify/login');
+    Auth::guard('charity')->logout();
+    return redirect('charity/login');
 }
 
 
